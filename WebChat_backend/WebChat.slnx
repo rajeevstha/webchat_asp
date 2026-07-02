@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Webchat.Api/Webchat.Api.csproj" />
+  <Project Path="Webchat.Application/Webchat.Application.csproj" />
+  <Project Path="Webchat.Domain/Webchat.Domain.csproj" />
+  <Project Path="Webchat.Infrastructure/Webchat.Infrastructure.csproj" />
+  <Project Path="Webchat.SignalRClient/Webchat.SignalRClient.csproj" Id="3aa29936-41f4-490c-83c4-a71751addeec" />
+</Solution>

@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Webchat.Api",
+    "\\Webchat.Application\\Dtos",
+    "\\Webchat.Application\\Dtos\\Messages",
+    "\\Webchat.Domain\\Entities",
+    "\\Webchat.Infrastructure",
+    "\\Webchat.Infrastructure\\Data\\Repositories",
+    "\\Webchat.Infrastructure\\Services",
+    "\\Webchat.SignalRClient"
+  ],
+  "SelectedNode": "\\Webchat.Api\\Program.cs",
+  "PreviewInSolutionExplorer": false
+}
