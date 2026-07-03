@@ -7,24 +7,8 @@
       "RelativeMoniker": "D:0:0:{7530A7F2-A12E-94FF-796D-1F4DAB67E8E0}|Webchat.Api\\Webchat.Api.csproj|solutionrelative:webchat.api\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7530A7F2-A12E-94FF-796D-1F4DAB67E8E0}|Webchat.Api\\Webchat.Api.csproj|c:\\users\\acern5\\source\\repos\\webchat_repo\\webchat_backend\\webchat.api\\endpoints\\userendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7530A7F2-A12E-94FF-796D-1F4DAB67E8E0}|Webchat.Api\\Webchat.Api.csproj|solutionrelative:webchat.api\\endpoints\\userendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8274C5E6-1444-ECFB-A25C-E4EBD9199AAB}|Webchat.Infrastructure\\Webchat.Infrastructure.csproj|c:\\users\\acern5\\source\\repos\\webchat_repo\\webchat_backend\\webchat.infrastructure\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8274C5E6-1444-ECFB-A25C-E4EBD9199AAB}|Webchat.Infrastructure\\Webchat.Infrastructure.csproj|solutionrelative:webchat.infrastructure\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7530A7F2-A12E-94FF-796D-1F4DAB67E8E0}|Webchat.Api\\Webchat.Api.csproj|c:\\users\\acern5\\source\\repos\\webchat_repo\\webchat_backend\\webchat.api\\hubs\\useridprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7530A7F2-A12E-94FF-796D-1F4DAB67E8E0}|Webchat.Api\\Webchat.Api.csproj|solutionrelative:webchat.api\\hubs\\useridprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7530A7F2-A12E-94FF-796D-1F4DAB67E8E0}|Webchat.Api\\Webchat.Api.csproj|c:\\users\\acern5\\source\\repos\\webchat_repo\\webchat_backend\\webchat.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7530A7F2-A12E-94FF-796D-1F4DAB67E8E0}|Webchat.Api\\Webchat.Api.csproj|solutionrelative:webchat.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EAD6C3E8-3EDF-85A3-11D1-1E45C0140435}|Webchat.Application\\Webchat.Application.csproj|c:\\users\\acern5\\source\\repos\\webchat_repo\\webchat_backend\\webchat.application\\dtos\\users\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAD6C3E8-3EDF-85A3-11D1-1E45C0140435}|Webchat.Application\\Webchat.Application.csproj|solutionrelative:webchat.application\\dtos\\users\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,8 +18,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "Webchat.Api\\Hubs\\ChatHub.cs",
+              "ToolTip": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Hubs\\ChatHub.cs",
+              "RelativeToolTip": "Webchat.Api\\Hubs\\ChatHub.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAA7wHAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-03T07:05:00.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Webchat.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Program.cs",
+              "RelativeToolTip": "Webchat.Api\\Program.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAADIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-03T06:10:21.762Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:4:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
@@ -51,83 +61,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserIdProvider.cs",
-              "DocumentMoniker": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Hubs\\UserIdProvider.cs",
-              "RelativeDocumentMoniker": "Webchat.Api\\Hubs\\UserIdProvider.cs",
-              "ToolTip": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Hubs\\UserIdProvider.cs",
-              "RelativeToolTip": "Webchat.Api\\Hubs\\UserIdProvider.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-02T06:17:53.327Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Application\\Dtos\\Users\\UserDto.cs",
-              "RelativeDocumentMoniker": "Webchat.Application\\Dtos\\Users\\UserDto.cs",
-              "ToolTip": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Application\\Dtos\\Users\\UserDto.cs",
-              "RelativeToolTip": "Webchat.Application\\Dtos\\Users\\UserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-02T04:16:18.708Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Infrastructure\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Webchat.Infrastructure\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Infrastructure\\Services\\UserService.cs",
-              "RelativeToolTip": "Webchat.Infrastructure\\Services\\UserService.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAYwCYAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-02T04:15:34.109Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Endpoints\\UserEndpoints.cs",
-              "RelativeDocumentMoniker": "Webchat.Api\\Endpoints\\UserEndpoints.cs",
-              "ToolTip": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Endpoints\\UserEndpoints.cs",
-              "RelativeToolTip": "Webchat.Api\\Endpoints\\UserEndpoints.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBYAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-02T04:07:41.868Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ChatHub.cs",
-              "DocumentMoniker": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Hubs\\ChatHub.cs",
-              "RelativeDocumentMoniker": "Webchat.Api\\Hubs\\ChatHub.cs",
-              "ToolTip": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Hubs\\ChatHub.cs",
-              "RelativeToolTip": "Webchat.Api\\Hubs\\ChatHub.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwDoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T11:36:57.18Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Program.cs",
-              "RelativeDocumentMoniker": "Webchat.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Program.cs",
-              "RelativeToolTip": "Webchat.Api\\Program.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAADwv4QAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T08:16:16.359Z",
-              "EditorCaption": ""
             }
           ]
         }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Webchat.Domain.Enums;
 
 namespace Webchat.Domain.Entities
 {
@@ -11,7 +9,8 @@ namespace Webchat.Domain.Entities
         public Guid SenderId { get; init; }
         public string Content { get; set; } = string.Empty;
         public bool IsBroadcast { get; set; }
-        public bool IsSeenByReceiver { get; set; }
+        
+        public MessageStatus Status { get; set; } = MessageStatus.Sent;
         public DateTime SentAt { get; init; } = DateTime.UtcNow;
 
         // Navigation

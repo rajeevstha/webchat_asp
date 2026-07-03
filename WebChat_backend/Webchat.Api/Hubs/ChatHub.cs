@@ -1,7 +1,9 @@
-﻿using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SignalR;
+using System.Security.Claims;
 using Webchat.Application.Interfaces;
+using Webchat.Domain.Entities;
 
 namespace Webchat.Api.Hubs;
 
@@ -9,22 +11,60 @@ namespace Webchat.Api.Hubs;
 public class ChatHub : Hub
 {
     private readonly IMessageService _messageService;
+    private readonly UserManager<User> _userManager;
 
-    public ChatHub(IMessageService messageService)
+    public ChatHub(
+        IMessageService messageService,
+        UserManager<User> userManager
+        )
     {
         _messageService = messageService;
+        _userManager = userManager;
     }
 
     public override async Task OnConnectedAsync()
     {
         Console.WriteLine("ChatHub connected");
         Console.WriteLine($"{Context.UserIdentifier} connected");
+        var userId = Guid.Parse(
+        Context.User!.FindFirstValue(ClaimTypes.NameIdentifier)!);
+
+        var user = await _userManager.FindByIdAsync(userId.ToString());
+
+        if (user != null)
+        {
+            user.IsOnline = true;
+            await _userManager.UpdateAsync(user);
+
+            await Clients.All.SendAsync(
+           "UserStatusChanged",
+           user.Id,
+           true);
+        }
+
         await base.OnConnectedAsync();
     }
 
     public override async Task OnDisconnectedAsync(Exception? exception)
     {
         Console.WriteLine($"{Context.UserIdentifier} disconnected");
+
+        var userId = Guid.Parse(
+       Context.User!.FindFirstValue(ClaimTypes.NameIdentifier)!);
+
+        var user = await _userManager.FindByIdAsync(userId.ToString());
+
+        if (user != null)
+        {
+            user.IsOnline = false;
+            await _userManager.UpdateAsync(user);
+
+            await Clients.All.SendAsync(
+            "UserStatusChanged",
+            user.Id,
+            false);
+        }
+
         await base.OnDisconnectedAsync(exception);
     }
 
@@ -57,5 +97,30 @@ public class ChatHub : Hub
         // Echo back to sender
         await Clients.Caller
             .SendAsync("ReceiveMessage", message);
+    }
+
+    public async Task MessageDelivered(Guid messageId)
+    {
+        await _messageService.MarkAsDeliveredAsync(messageId);
+
+        var message = await _messageService.GetMessageByIdAsync(messageId);
+
+        if (message != null)
+        {
+            await Clients.User(message.SenderId.ToString())
+                .SendAsync(
+                    "MessageStatusUpdated",
+                    message.Id,
+                    message.Status);
+
+        }
+    }
+
+    public async Task MessageSeen(Guid messageId)
+    {
+        var userId = Guid.Parse(
+            Context.User!.FindFirstValue(ClaimTypes.NameIdentifier)!);
+
+        await _messageService.MarkAsSeenAsync(messageId, userId);
     }
 }

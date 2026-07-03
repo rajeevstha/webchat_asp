@@ -3,6 +3,7 @@ using Webchat.Application.Dtos.Messages;
 using Webchat.Application.Interfaces;
 using Webchat.Application.Repository;
 using Webchat.Domain.Entities;
+using Webchat.Domain.Enums;
 
 namespace Webchat.Infrastructure.Services;
 
@@ -58,7 +59,8 @@ public class MessageService : IMessageService
             ConversationId = conversation.Id,
             SenderId = senderId,
             Content = content,
-            SentAt = DateTime.UtcNow
+            SentAt = DateTime.UtcNow,
+            Status = MessageStatus.Sent
         };
 
         await _messageRepository.AddAsync(message);
@@ -69,7 +71,8 @@ public class MessageService : IMessageService
             ConversationId = conversation.Id,
             SenderId = senderId,
             Content = content,
-            SentAt = message.SentAt
+            SentAt = message.SentAt,
+            Status = message.Status
         };
     }
 
@@ -95,6 +98,7 @@ public class MessageService : IMessageService
             SenderId = m.SenderId,
             Content = m.Content,
             SentAt = m.SentAt,
+            Status = m.Status
         }).ToList();
     }
 
@@ -112,12 +116,11 @@ public class MessageService : IMessageService
             SenderId = message.SenderId,
             Content = message.Content,
             SentAt = message.SentAt,
+            Status = message.Status
         };
     }
 
-    public async Task MarkAsSeenAsync(
-        Guid messageId,
-        Guid userId)
+    public async Task MarkAsSeenAsync(Guid messageId, Guid userId)
     {
         var message = await _messageRepository.GetByIdAsync(messageId);
 
@@ -127,6 +130,22 @@ public class MessageService : IMessageService
         if (message.SenderId == userId)
             throw new Exception("Sender cannot mark own message as seen");
 
+        message.Status = MessageStatus.Seen;
+
         await _messageRepository.UpdateAsync(message);
+    }
+
+    public async Task MarkAsDeliveredAsync(Guid messageId)
+    {
+        var message = await _messageRepository.GetByIdAsync(messageId);
+
+        if (message == null)
+            throw new Exception("Message not found");
+
+        if (message.Status == MessageStatus.Sent)
+        {
+            message.Status = MessageStatus.Delivered;
+            await _messageRepository.UpdateAsync(message);
+        }
     }
 }

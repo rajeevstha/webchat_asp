@@ -265,6 +265,7 @@ C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Api\obj\Debug\
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Api\obj\Debug\net10.0\Webchat.Api.csproj.CoreCompileInputs.cache
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Api\obj\Debug\net10.0\Webchat.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Api\obj\Debug\net10.0\Webchat.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Api\obj\Debug\net10.0\Webchat.Api.sourcelink.json
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Api\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Api\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Api\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json

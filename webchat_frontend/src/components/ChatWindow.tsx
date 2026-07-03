@@ -20,6 +20,10 @@ export default function ChatWindow({
     contact,
     currentUserId,
 }: Props) {
+
+    console.log("ChatWindow rendered");
+
+
     const [messages, setMessages] = useState<ChatMessage[]>([]);
     const [text, setText] = useState("");
     const [conversationId, setConversationId] = useState<string | null>(null);
@@ -49,11 +53,15 @@ export default function ChatWindow({
 
     // Send message
     const handleSend = async (e: React.FormEvent<HTMLFormElement>) => {
+        console.log("handleSend called");
         e.preventDefault();
 
         if (!contact || !text.trim()) return;
 
         const connection = getConnection();
+
+        console.log(connection);
+        console.log(connection?.state);
 
         if (!connection) {
             console.error("SignalR connection is null");
@@ -88,6 +96,7 @@ export default function ChatWindow({
 
     // Listen for SignalR messages
     useEffect(() => {
+           console.log("SignalR effect");
         if (!contact) return;
 
         const connection = getConnection();
@@ -159,11 +168,10 @@ export default function ChatWindow({
                             className={`mb-3 ${mine ? "text-right" : ""}`}
                         >
                             <div
-                                className={`inline-block rounded-lg px-4 py-3 max-w-[70%] break-words ${
-                                    mine
+                                className={`inline-block rounded-lg px-4 py-3 max-w-[70%] break-words ${mine
                                         ? "bg-indigo-600 text-white"
                                         : "bg-white shadow"
-                                }`}
+                                    }`}
                             >
                                 {message.content}
                             </div>

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Webchat.Domain.Enums;
 
 namespace Webchat.Application.Dtos.Messages
 {
@@ -18,6 +16,6 @@ namespace Webchat.Application.Dtos.Messages
 
         public DateTime SentAt { get; init; }
 
-        public bool IsSeen { get; init; }
+        public MessageStatus Status { get; init; }
     }
 }

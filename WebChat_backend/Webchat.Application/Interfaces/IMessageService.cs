@@ -19,20 +19,14 @@ namespace Webchat.Application.Interfaces
         Task<MessageDto?> GetMessageByIdAsync(
             Guid messageId);
 
-        // Edit a message
-        //Task EditMessageAsync(
-        //    Guid messageId,
-        //    Guid userId,
-        //    string newContent);
-
-        // Delete a message
-        //Task DeleteMessageAsync(
-        //    Guid messageId,
-        //    Guid userId);
 
         // Mark a message as seen
         Task MarkAsSeenAsync(
             Guid messageId,
             Guid userId);
+
+        Task MarkAsDeliveredAsync(Guid messageId);
+
+
     }
 }

@@ -1067,11 +1067,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Domain\\Webchat.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\WebChat.Domain\\Webchat.Domain.csproj",
       "projectName": "Webchat.Domain",
-      "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Domain\\Webchat.Domain.csproj",
+      "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\WebChat.Domain\\Webchat.Domain.csproj",
       "packagesPath": "C:\\Users\\AcerN5\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Domain\\obj\\",
+      "outputPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\WebChat.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

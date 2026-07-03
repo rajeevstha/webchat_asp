@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Webchat.SignalRClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ee4e5ccbd96f89efc0258cdfcd984406cbea174")]
 [assembly: System.Reflection.AssemblyProductAttribute("Webchat.SignalRClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Webchat.SignalRClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

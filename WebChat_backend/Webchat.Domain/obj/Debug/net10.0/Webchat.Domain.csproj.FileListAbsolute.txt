@@ -18,6 +18,7 @@ C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Domain\obj\Deb
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Domain\obj\Debug\net10.0\Webchat.Domain.AssemblyInfoInputs.cache
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Domain\obj\Debug\net10.0\Webchat.Domain.AssemblyInfo.cs
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Domain\obj\Debug\net10.0\Webchat.Domain.csproj.CoreCompileInputs.cache
+C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Domain\obj\Debug\net10.0\Webchat.Domain.sourcelink.json
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Domain\obj\Debug\net10.0\Webchat.Domain.dll
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Domain\obj\Debug\net10.0\refint\Webchat.Domain.dll
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.Domain\obj\Debug\net10.0\Webchat.Domain.pdb

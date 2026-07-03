@@ -92,6 +92,7 @@ C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.SignalRClient\
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.SignalRClient\obj\Debug\net10.0\Webchat.SignalRClient.AssemblyInfoInputs.cache
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.SignalRClient\obj\Debug\net10.0\Webchat.SignalRClient.AssemblyInfo.cs
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.SignalRClient\obj\Debug\net10.0\Webchat.SignalRClient.csproj.CoreCompileInputs.cache
+C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.SignalRClient\obj\Debug\net10.0\Webchat.SignalRClient.sourcelink.json
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.SignalRClient\obj\Debug\net10.0\Webchat..1D78B271.Up2Date
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.SignalRClient\obj\Debug\net10.0\Webchat.SignalRClient.dll
 C:\Users\AcerN5\source\repos\WebChat_repo\WebChat_backend\Webchat.SignalRClient\obj\Debug\net10.0\refint\Webchat.SignalRClient.dll

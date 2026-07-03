@@ -232,14 +232,14 @@ namespace Webchat.Infrastructure.Migrations
                     b.Property<bool>("IsBroadcast")
                         .HasColumnType("boolean");
 
-                    b.Property<bool>("IsSeenByReceiver")
-                        .HasColumnType("boolean");
-
                     b.Property<Guid>("SenderId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("SentAt")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
