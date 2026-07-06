@@ -24,8 +24,7 @@ public class ChatHub : Hub
 
     public override async Task OnConnectedAsync()
     {
-        Console.WriteLine("ChatHub connected");
-        Console.WriteLine($"{Context.UserIdentifier} connected");
+
         var userId = Guid.Parse(
         Context.User!.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
@@ -41,6 +40,14 @@ public class ChatHub : Hub
            user.Id,
            true);
         }
+
+        // Send current online users to the newly connected client
+        var onlineUsers = _userManager.Users
+            .Where(u => u.IsOnline)
+            .Select(u => u.Id.ToString())
+            .ToList();
+
+        await Clients.Caller.SendAsync("OnlineUsers", onlineUsers);
 
         await base.OnConnectedAsync();
     }
@@ -118,9 +125,21 @@ public class ChatHub : Hub
 
     public async Task MessageSeen(Guid messageId)
     {
+
         var userId = Guid.Parse(
             Context.User!.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
         await _messageService.MarkAsSeenAsync(messageId, userId);
+
+        var message = await _messageService.GetMessageByIdAsync(messageId);
+
+        if (message != null)
+        {
+            await Clients.User(message.SenderId.ToString())
+                .SendAsync(
+                    "MessageStatusUpdated",
+                    message.Id,
+                    message.Status);
+        }
     }
 }

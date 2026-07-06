@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iuvcfsRbImQ=",
+  "dgSpecHash": "Skf7CHOsyT0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\WebChat.Infrastructure\\Webchat.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\WebChat.Infrastructure\\Webchat.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AcerN5\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\AcerN5\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.3.9\\microsoft.aspnetcore.authentication.2.3.9.nupkg.sha512",
@@ -83,9 +83,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'System.Security.Cryptography.Xml' 8.0.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-37gx-xxp4-5rgx",
-      "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\WebChat.Infrastructure\\Webchat.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\WebChat.Infrastructure\\Webchat.Infrastructure.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\WebChat.Infrastructure\\Webchat.Infrastructure.csproj",
+      "filePath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\WebChat.Infrastructure\\Webchat.Infrastructure.csproj",
       "libraryId": "System.Security.Cryptography.Xml",
       "targetGraphs": [
         "net10.0"
@@ -95,9 +95,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'System.Security.Cryptography.Xml' 8.0.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3x6-4m5h-cxqf",
-      "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\WebChat.Infrastructure\\Webchat.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\WebChat.Infrastructure\\Webchat.Infrastructure.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\WebChat.Infrastructure\\Webchat.Infrastructure.csproj",
+      "filePath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\WebChat.Infrastructure\\Webchat.Infrastructure.csproj",
       "libraryId": "System.Security.Cryptography.Xml",
       "targetGraphs": [
         "net10.0"

@@ -14,15 +14,13 @@ export interface ChatMessage {
     conversationId: string;
     content: string;
     sentAt: string;
+    status: number;
 }
 
 export default function ChatWindow({
     contact,
     currentUserId,
 }: Props) {
-
-    console.log("ChatWindow rendered");
-
 
     const [messages, setMessages] = useState<ChatMessage[]>([]);
     const [text, setText] = useState("");
@@ -42,10 +40,37 @@ export default function ChatWindow({
             if (history.length > 0) {
                 console.log("Loaded conversation:", history[0].conversationId);
                 setConversationId(history[0].conversationId);
+
             } else {
                 console.log("Conversation has no messages yet.");
                 setConversationId(null);
             }
+
+            const connection = getConnection();
+
+            if (connection) {
+                for (const message of history) {
+                    if (
+                        message.senderId !== currentUserId &&
+                        message.status !== 2
+                    ) {
+
+                        try {
+                            console.log("Marking message as seen:", message.id);
+                            await connection.invoke(
+                                "MessageSeen",
+                                message.id
+                            );
+                        } catch (err) {
+                            console.error(
+                                "Failed to mark message as seen:",
+                                err
+                            );
+                        }
+                    }
+                }
+            }
+
         } catch (err) {
             console.error("Failed to load messages:", err);
         }
@@ -96,38 +121,93 @@ export default function ChatWindow({
 
     // Listen for SignalR messages
     useEffect(() => {
-           console.log("SignalR effect");
+        console.log("SignalR effect");
         if (!contact) return;
 
         const connection = getConnection();
 
         if (!connection) return;
 
-        const handler = (message: ChatMessage) => {
-            console.log("ReceiveMessage:", message);
-            console.log("Loaded conversation:", conversationId);
-            console.log("Incoming conversation:", message.conversationId);
-
+        const handler = async (message: ChatMessage) => {
+            if (message.senderId !== currentUserId) {
+                await connection.invoke("MessageDelivered", message.id);
+            }
+            
             const belongs =
                 conversationId !== null &&
                 message.conversationId === conversationId;
 
-            console.log("belongs:", belongs);
+            if (!belongs) return;
 
-            if (belongs) {
-                setMessages(prev => [...prev, message]);
+            setMessages(prev => [...prev, message]);
+
+            if (message.senderId !== currentUserId) {
+                try {
+                    await connection.invoke("MessageDelivered", message.id);
+
+                } catch (err) {
+                    console.error(err);
+                }
             }
+
         };
+
+        const statusHandler = (
+            messageId: string,
+            status: number
+        ) => {
+            console.log("Status updated:", messageId, status);
+
+            setMessages(prev =>
+                prev.map(message =>
+                    message.id === messageId
+                        ? { ...message, status }
+                        : message
+                )
+            );
+        }
 
         // Prevent duplicate handlers
         connection.off("ReceiveMessage");
+        connection.off("MessageStatusUpdated");
 
         connection.on("ReceiveMessage", handler);
+        connection.on("MessageStatusUpdated", statusHandler);
 
         return () => {
             connection.off("ReceiveMessage", handler);
+            connection.off("MessageStatusUpdated", statusHandler);
         };
     }, [contact, conversationId]);
+
+    useEffect(() => {
+        async function markSeen() {
+            const connection = getConnection();
+
+            if (!connection || !contact) return;
+
+            for (const message of messages) {
+                if (
+                    message.senderId !== currentUserId &&
+                    message.status !== 2
+                ) {
+                    try {
+                        console.log("Marking seen:", message.id);
+
+                        await connection.invoke(
+                            "MessageSeen",
+                            message.id
+                        );
+                    } catch (err) {
+                        console.error(err);
+                    }
+                }
+            }
+        }
+
+        markSeen();
+    }, [messages, contact, currentUserId]);
+
 
     // Auto-scroll
     useEffect(() => {
@@ -169,8 +249,8 @@ export default function ChatWindow({
                         >
                             <div
                                 className={`inline-block rounded-lg px-4 py-3 max-w-[70%] break-words ${mine
-                                        ? "bg-indigo-600 text-white"
-                                        : "bg-white shadow"
+                                    ? "bg-indigo-600 text-white"
+                                    : "bg-white shadow"
                                     }`}
                             >
                                 {message.content}
@@ -184,6 +264,15 @@ export default function ChatWindow({
                                         minute: "2-digit",
                                     }
                                 )}
+
+                                {mine && (
+                                    <span className="ml-2">
+                                        {message.status === 0 && "Sent"}
+                                        {message.status === 1 && "Delivered"}
+                                        {message.status === 2 && "Seen"}
+                                    </span>
+                                )}
+
                             </div>
                         </div>
                     );

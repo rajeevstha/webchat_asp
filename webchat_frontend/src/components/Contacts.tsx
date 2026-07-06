@@ -36,12 +36,24 @@ export default function Contacts({
         );
     };
 
+     const onlineUsersHandler = (onlineUsers: string[]) => {
+        setContacts(prev =>
+            prev.map(contact => ({
+                ...contact,
+                online: onlineUsers.includes(contact.id),
+            }))
+        );
+    };
+    
     connection.off("UserStatusChanged");
+    connection.off("OnlineUsers");
 
     connection.on("UserStatusChanged", handler);
+    connection.on("OnlineUsers", onlineUsersHandler);
 
     return () => {
         connection.off("UserStatusChanged", handler);
+         connection.off("OnlineUsers", onlineUsersHandler);
     };
 }, []);
 
@@ -55,7 +67,7 @@ export default function Contacts({
       const mappedContacts: Contact[] = users.map((user: any) => ({
         id: user.id,
         name: user.name,
-        online: user.online ?? false,
+        online: user.isOnline ?? false,
         role: user.role,
       }));
 

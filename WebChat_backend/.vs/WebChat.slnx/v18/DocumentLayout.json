@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7530A7F2-A12E-94FF-796D-1F4DAB67E8E0}|Webchat.Api\\Webchat.Api.csproj|c:\\users\\acern5\\source\\repos\\webchat_repo\\webchat_backend\\webchat.api\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7530A7F2-A12E-94FF-796D-1F4DAB67E8E0}|Webchat.Api\\Webchat.Api.csproj|solutionrelative:webchat.api\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7530A7F2-A12E-94FF-796D-1F4DAB67E8E0}|Webchat.Api\\Webchat.Api.csproj|c:\\users\\acern5\\source\\repos\\webchat_repo\\webchat_backend\\webchat.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7530A7F2-A12E-94FF-796D-1F4DAB67E8E0}|Webchat.Api\\Webchat.Api.csproj|solutionrelative:webchat.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,41 +14,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ChatHub.cs",
-              "DocumentMoniker": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Hubs\\ChatHub.cs",
-              "RelativeDocumentMoniker": "Webchat.Api\\Hubs\\ChatHub.cs",
-              "ToolTip": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Hubs\\ChatHub.cs",
-              "RelativeToolTip": "Webchat.Api\\Hubs\\ChatHub.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAA7wHAAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-03T07:05:00.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Program.cs",
-              "RelativeDocumentMoniker": "Webchat.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Program.cs",
-              "RelativeToolTip": "Webchat.Api\\Program.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAADIAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-03T06:10:21.762Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:4:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
               "$type": "Bookmark",
@@ -61,6 +27,23 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "Webchat.Api\\Hubs\\ChatHub.cs",
+              "ToolTip": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Hubs\\ChatHub.cs",
+              "RelativeToolTip": "Webchat.Api\\Hubs\\ChatHub.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAAwGwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-06T05:20:56.352Z",
+              "EditorCaption": ""
             }
           ]
         }
