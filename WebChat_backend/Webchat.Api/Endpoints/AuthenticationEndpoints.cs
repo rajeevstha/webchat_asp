@@ -21,13 +21,14 @@ public static class AuthenticationEndpoints
                 [FromServices] IAuthService authService,
                 [FromBody] CreateUserRequest request) =>
             {
-                var user = await authService.CreateUserAsync(
+                var user = await authService.CreateUserAsync(request.Name,
                     request.Email,
                     request.Password);
 
                 return Results.Ok(new
                 {
                     user.Id,
+                    user.UserName,
                     user.Email,
                     user.CreatedAt
                 });
@@ -40,28 +41,38 @@ public static class AuthenticationEndpoints
         [FromServices] IAuthService authService,
         [FromBody] LoginRequest request) =>
     {
-        var response = await authService.LoginAsync(
-            request.Email,
-            request.Password);
-
-        httpContext.Response.Cookies.Append(
-            "refreshToken",
-            response.RefreshToken,
-            new CookieOptions
-            {
-                HttpOnly = true,
-                Secure = false, // true when using HTTPS
-                SameSite = SameSiteMode.Lax,
-                Expires = DateTimeOffset.UtcNow.AddDays(30)
-            });
-
-        // Don't send the refresh token in the response body
-        response.RefreshToken = string.Empty;
-
-        return Results.Ok(new
+        try
         {
-            accessToken = response.AccessToken
-        });
+            var response = await authService.LoginAsync(
+                request.Email,
+                request.Password);
+
+            httpContext.Response.Cookies.Append(
+                "refreshToken",
+                response.RefreshToken,
+                new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = false, // true when using HTTPS
+                    SameSite = SameSiteMode.Lax,
+                    Expires = DateTimeOffset.UtcNow.AddDays(30)
+                });
+
+            // Don't send the refresh token in the response body
+            response.RefreshToken = string.Empty;
+
+            return Results.Ok(new
+            {
+                accessToken = response.AccessToken,
+                mustChangePassword = response.MustChangePassword
+            });
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Results.Json(
+                new { message = ex.Message },
+                statusCode: StatusCodes.Status401Unauthorized);
+        }
     });
 
         //LOGOUT
@@ -88,6 +99,26 @@ public static class AuthenticationEndpoints
                 return Results.Ok(response);
             });
 
+        // CHANGE PASSWORD
+        group.MapPost("/change-password",
+            async (
+                ClaimsPrincipal principal,
+                [FromServices] IAuthService authService,
+                [FromBody] ChangePasswordRequest request) =>
+            {
+                var userIdClaim = principal.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                if (string.IsNullOrWhiteSpace(userIdClaim))
+                    return Results.Unauthorized();
+
+                await authService.ChangePasswordAsync(
+                    Guid.Parse(userIdClaim),
+                    request);
+
+                return Results.NoContent();
+            })
+            .RequireAuthorization();
+
 
         //ME
         group.MapGet("/me", async (
@@ -111,6 +142,8 @@ public static class AuthenticationEndpoints
                 });
             })
             .RequireAuthorization();
+
+
 
     }
 }

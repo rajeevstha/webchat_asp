@@ -4,7 +4,7 @@ import { WebchatApiService } from "../../services/services/WebchatApiService";
 interface Props {
   open: boolean;
   onClose: () => void;
-  onLogin: () => void;
+  onLogin?: () => void;
 }
 
 export default function RegisterDialog({
@@ -12,6 +12,7 @@ export default function RegisterDialog({
   onClose,
   onLogin,
 }: Props) {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -43,18 +44,20 @@ export default function RegisterDialog({
       setLoading(true);
 
       await WebchatApiService.postApiAuthRegister({
+        name,
         email,
         password,
       });
 
       alert("Registration successful. Please sign in.");
 
+      setName("");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
 
       onClose();
-      onLogin();
+      onLogin?.();
     } catch (err: any) {
       setError(
         err?.response?.data?.message ??
@@ -89,6 +92,18 @@ export default function RegisterDialog({
             handleRegister();
           }}
         >
+          
+          <div>
+            <label>Name</label>
+
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full border rounded-lg p-2 mt-1"
+            />
+          </div>
+
           <div>
             <label>Email</label>
 
@@ -136,7 +151,7 @@ export default function RegisterDialog({
           <button
             type="button"
             className="text-indigo-600"
-            onClick={onLogin}
+            onClick={() => onLogin?.()}
           >
             Sign In
           </button>

@@ -19,6 +19,9 @@ public class User : IdentityUser<Guid>
 
     public DateTime CreatedAt { get; init; } = DateTime.UtcNow;
 
+    public bool IsBlocked { get; set; }
+    public bool HasSetPassword { get; set; } = false;
+
     // Navigation
     public ICollection<Message> Messages { get; set; }
         = new List<Message>();

@@ -11,5 +11,7 @@ namespace Webchat.Application.Dtos.Users
         public string Email { get; set; } = "";
         public bool IsOnline { get; set; }
         public string Role { get; set; } = default!;
+        public bool IsBlocked { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

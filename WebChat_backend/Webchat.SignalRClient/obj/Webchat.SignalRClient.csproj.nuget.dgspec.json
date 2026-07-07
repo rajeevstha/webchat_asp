@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.SignalRClient\\Webchat.SignalRClient.csproj": {}
+    "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.SignalRClient\\Webchat.SignalRClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Application\\Webchat.Application.csproj": {
+    "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Application\\Webchat.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Application\\Webchat.Application.csproj",
+        "projectUniqueName": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Application\\Webchat.Application.csproj",
         "projectName": "Webchat.Application",
-        "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Application\\Webchat.Application.csproj",
+        "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Application\\Webchat.Application.csproj",
         "packagesPath": "C:\\Users\\AcerN5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Application\\obj\\",
+        "outputPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Domain\\Webchat.Domain.csproj": {
-                "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Domain\\Webchat.Domain.csproj"
+              "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Domain\\Webchat.Domain.csproj": {
+                "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Domain\\Webchat.Domain.csproj"
               }
             }
           }
@@ -349,14 +349,14 @@
         }
       }
     },
-    "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Domain\\Webchat.Domain.csproj": {
+    "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Domain\\Webchat.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Domain\\Webchat.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Domain\\Webchat.Domain.csproj",
         "projectName": "Webchat.Domain",
-        "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Domain\\Webchat.Domain.csproj",
+        "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Domain\\Webchat.Domain.csproj",
         "packagesPath": "C:\\Users\\AcerN5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Domain\\obj\\",
+        "outputPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -696,14 +696,14 @@
         }
       }
     },
-    "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.SignalRClient\\Webchat.SignalRClient.csproj": {
+    "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.SignalRClient\\Webchat.SignalRClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.SignalRClient\\Webchat.SignalRClient.csproj",
+        "projectUniqueName": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.SignalRClient\\Webchat.SignalRClient.csproj",
         "projectName": "Webchat.SignalRClient",
-        "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.SignalRClient\\Webchat.SignalRClient.csproj",
+        "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.SignalRClient\\Webchat.SignalRClient.csproj",
         "packagesPath": "C:\\Users\\AcerN5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.SignalRClient\\obj\\",
+        "outputPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.SignalRClient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -725,8 +725,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Application\\Webchat.Application.csproj": {
-                "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Application\\Webchat.Application.csproj"
+              "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Application\\Webchat.Application.csproj": {
+                "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Application\\Webchat.Application.csproj"
               }
             }
           }

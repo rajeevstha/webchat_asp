@@ -24,7 +24,9 @@ namespace Webchat.Infrastructure.Services
             var claims = new List<Claim>
         {
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.Email, user.Email!)
+            new Claim(ClaimTypes.Email, user.Email!),
+            new Claim("must_change_password",
+          (!user.HasSetPassword).ToString().ToLower())
         };
 
             foreach (var role in roles)

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RGk9ZOzpEns=",
+  "dgSpecHash": "BAJX7BbbZA0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Api\\Webchat.Api.csproj",
+  "projectFilePath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Webchat.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AcerN5\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\AcerN5\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.9\\microsoft.aspnetcore.authentication.jwtbearer.10.0.9.nupkg.sha512",
@@ -54,9 +54,9 @@
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference Microsoft.AspNetCore.SignalR will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
-      "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Api\\Webchat.Api.csproj",
+      "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Webchat.Api.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\webchat_backend\\Webchat.Api\\Webchat.Api.csproj",
+      "filePath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Api\\Webchat.Api.csproj",
       "libraryId": "Microsoft.AspNetCore.SignalR",
       "targetGraphs": [
         "net10.0"
