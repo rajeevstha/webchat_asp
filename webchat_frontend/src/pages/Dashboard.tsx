@@ -123,66 +123,67 @@ export default function Dashboard() {
 
     if (loading) {
         return (
-            <div className="p-8">
-                Loading users...
+            <div className="min-h-screen flex items-center justify-center text-sm text-gray-400">
+                Loading users…
             </div>
         );
     }
 
     if (error) {
         return (
-            <div className="p-8 text-red-600">
+            <div className="min-h-screen flex items-center justify-center text-sm text-red-500">
                 {error}
             </div>
         );
     }
 
     return (
-        <div className="min-h-screen bg-slate-100">
-            <header className="bg-indigo-700 text-white px-8 py-5 shadow flex items-center justify-between">
-                <div className="flex items-center gap-4">
+        <div className="min-h-screen bg-white">
+            <header className="border-b border-gray-100 px-8 py-4 flex items-center justify-between">
+                <div className="flex items-center gap-6">
+                    <div>
+                        <h1 className="text-lg font-semibold text-gray-900 tracking-tight">
+                            Admin Dashboard
+                        </h1>
+                        <p className="text-gray-400 text-xs mt-0.5">
+                            User Management
+                        </p>
+                    </div>
+
+                    <div className="h-8 w-px bg-gray-100" />
+
                     <button
                         onClick={() => navigate("/chat")}
-                        className="bg-white text-indigo-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition"
+                        className="text-sm text-gray-600 hover:text-gray-900 transition"
                     >
                         ← Chat
                     </button>
 
                     <button
                         onClick={() => setShowAddUserDialog(true)}
-                        className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold transition"
+                        className="text-sm bg-gray-900 hover:bg-gray-800 text-white px-3.5 py-1.5 rounded-md font-medium transition"
                     >
-                        + Add User
+                        + Add user
                     </button>
-
-                    <div>
-                        <h1 className="text-3xl font-bold">
-                            Admin Dashboard
-                        </h1>
-
-                        <p className="text-indigo-100">
-                            User Management
-                        </p>
-                    </div>
                 </div>
 
                 <button
                     onClick={logout}
-                    className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-semibold"
+                    className="text-sm text-gray-500 hover:text-red-600 transition"
                 >
                     Logout
                 </button>
             </header>
 
             <div className="p-8">
-                <div className="bg-white rounded-xl shadow overflow-hidden">
-                    <table className="w-full">
-                        <thead className="bg-slate-100">
-                            <tr>
-                                <th className="text-left px-6 py-4">Name</th>
-                                <th className="text-left px-6 py-4">Email</th>
-                                <th className="text-left px-6 py-4">Status</th>
-                                <th className="text-center px-6 py-4">Actions</th>
+                <div className="border border-gray-100 rounded-lg overflow-hidden">
+                    <table className="w-full text-sm">
+                        <thead>
+                            <tr className="border-b border-gray-100">
+                                <th className="text-left px-6 py-3 font-medium text-gray-500 text-xs uppercase tracking-wide">Name</th>
+                                <th className="text-left px-6 py-3 font-medium text-gray-500 text-xs uppercase tracking-wide">Email</th>
+                                <th className="text-left px-6 py-3 font-medium text-gray-500 text-xs uppercase tracking-wide">Status</th>
+                                <th className="text-right px-6 py-3 font-medium text-gray-500 text-xs uppercase tracking-wide">Actions</th>
                             </tr>
                         </thead>
 
@@ -190,25 +191,33 @@ export default function Dashboard() {
                             {users.map(user => (
                                 <tr
                                     key={user.id}
-                                    className="border-t hover:bg-slate-50"
+                                    className="border-b border-gray-50 last:border-0 hover:bg-gray-50/60 transition"
                                 >
-                                    <td className="px-6 py-4">
+                                    <td className="px-6 py-3.5 text-gray-900 font-medium">
                                         {user.name}
                                     </td>
 
-                                    <td className="px-6 py-4">
+                                    <td className="px-6 py-3.5 text-gray-500">
                                         {user.email}
                                     </td>
 
-                                    <td className="px-6 py-4">
+                                    <td className="px-6 py-3.5">
                                         <span
-                                            className={`px-3 py-1 rounded-full text-sm ${user.isBlocked
-                                                ? "bg-red-100 text-red-700"
+                                            className={`inline-flex items-center gap-1.5 text-xs font-medium ${user.isBlocked
+                                                ? "text-red-600"
                                                 : user.isOnline
-                                                    ? "bg-green-100 text-green-700"
-                                                    : "bg-gray-100 text-gray-600"
+                                                    ? "text-green-600"
+                                                    : "text-gray-400"
                                                 }`}
                                         >
+                                            <span
+                                                className={`h-1.5 w-1.5 rounded-full ${user.isBlocked
+                                                    ? "bg-red-500"
+                                                    : user.isOnline
+                                                        ? "bg-green-500"
+                                                        : "bg-gray-300"
+                                                    }`}
+                                            />
                                             {user.isBlocked
                                                 ? "Blocked"
                                                 : user.isOnline
@@ -217,35 +226,34 @@ export default function Dashboard() {
                                         </span>
                                     </td>
 
-                                    <td className="px-6 py-4 text-center space-x-2">
-                                        <button
-                                            onClick={() => {
-                                                setSelectedUserId(user.id);
-                                                setShowViewDialog(true);
-                                            }}
-                                            className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700"
-                                        >
-                                            View
-                                        </button>
+                                    <td className="px-6 py-3.5">
+                                        <div className="flex justify-end gap-2">
+                                            <button
+                                                onClick={() => {
+                                                    setSelectedUserId(user.id);
+                                                    setShowViewDialog(true);
+                                                }}
+                                                className="text-xs font-medium text-gray-600 hover:text-gray-900 border border-gray-200 rounded-md px-2.5 py-1 transition"
+                                            >
+                                                View
+                                            </button>
 
-                                        <button
-                                            onClick={() => toggleBlock(user)}
-                                            className={`text-white px-3 py-1 rounded ${user.isBlocked
-                                                ? "bg-green-600 hover:bg-green-700"
-                                                : "bg-yellow-500 hover:bg-yellow-600"
-                                                }`}
-                                        >
-                                            {user.isBlocked
-                                                ? "Unblock"
-                                                : "Block"}
-                                        </button>
+                                            <button
+                                                onClick={() => toggleBlock(user)}
+                                                className="text-xs font-medium text-gray-600 hover:text-gray-900 border border-gray-200 rounded-md px-2.5 py-1 transition"
+                                            >
+                                                {user.isBlocked
+                                                    ? "Unblock"
+                                                    : "Block"}
+                                            </button>
 
-                                        <button
-                                            onClick={() => deleteUser(user.id)}
-                                            className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
-                                        >
-                                            Delete
-                                        </button>
+                                            <button
+                                                onClick={() => deleteUser(user.id)}
+                                                className="text-xs font-medium text-red-600 hover:text-red-700 border border-red-100 rounded-md px-2.5 py-1 transition"
+                                            >
+                                                Delete
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                             ))}
@@ -253,7 +261,7 @@ export default function Dashboard() {
                     </table>
 
                     {users.length === 0 && (
-                        <div className="p-6 text-center text-gray-500">
+                        <div className="p-10 text-center text-sm text-gray-400">
                             No users found.
                         </div>
                     )}

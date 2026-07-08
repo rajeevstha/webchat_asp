@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Webchat.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c804a2f16d98aa037cca5374becc7e12ace34a18")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e578244169f5de1f330522db9ba09d7de824630")]
 [assembly: System.Reflection.AssemblyProductAttribute("Webchat.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Webchat.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

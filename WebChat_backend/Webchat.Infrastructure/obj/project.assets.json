@@ -4141,8 +4141,8 @@
     },
     "Webchat.Domain/1.0.0": {
       "type": "project",
-      "path": "../WebChat.Domain/Webchat.Domain.csproj",
-      "msbuildProject": "../WebChat.Domain/Webchat.Domain.csproj"
+      "path": "../Webchat.Domain/Webchat.Domain.csproj",
+      "msbuildProject": "../Webchat.Domain/Webchat.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4165,11 +4165,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\WebChat.Infrastructure\\Webchat.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Infrastructure\\Webchat.Infrastructure.csproj",
       "projectName": "Webchat.Infrastructure",
-      "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\WebChat.Infrastructure\\Webchat.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Infrastructure\\Webchat.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\AcerN5\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\WebChat.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\AcerN5\\source\\repos\\WebChat_repo\\WebChat_backend\\Webchat.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

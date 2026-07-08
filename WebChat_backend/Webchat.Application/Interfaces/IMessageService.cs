@@ -27,6 +27,8 @@ namespace Webchat.Application.Interfaces
 
         Task MarkAsDeliveredAsync(Guid messageId);
 
+        Task<Dictionary<Guid, int>> GetUnreadCountsAsync(Guid currentUserId);
+
 
     }
 }

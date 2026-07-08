@@ -3,8 +3,12 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type CreateUserRequest = {
+export type UserDto = {
+    id?: string;
     name?: string | null;
     email?: string | null;
-    password?: string | null;
+    isOnline?: boolean;
+    role?: string | null;
+    isBlocked?: boolean;
+    createdAt?: string;
 };

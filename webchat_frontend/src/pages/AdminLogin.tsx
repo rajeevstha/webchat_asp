@@ -54,7 +54,6 @@ export default function AdminLogin() {
                 return;
             }
 
-
             await startSignalR();
 
             navigate("/dashboard");
@@ -72,56 +71,52 @@ export default function AdminLogin() {
     };
 
     return (
-        <div className="min-h-screen bg-slate-100 flex items-center justify-center px-4">
-            <div className="bg-white w-full max-w-md rounded-xl shadow-lg p-8">
-                <div className="text-center mb-8">
-                    <h1 className="text-3xl font-bold text-indigo-700">
+        <div className="min-h-screen bg-white flex items-center justify-center px-4">
+            <div className="w-full max-w-sm">
+                <div className="text-center mb-10">
+                    <h1 className="text-2xl font-semibold text-gray-900 tracking-tight">
                         WebChat
                     </h1>
-
-                    <p className="text-gray-500 mt-2">
-                        Administrator Login
+                    <p className="text-gray-400 mt-1 text-sm">
+                        Admin sign in
                     </p>
                 </div>
 
                 {error && (
-                    <div className="mb-4 rounded-lg bg-red-100 text-red-700 p-3 text-sm">
+                    <div className="mb-5 rounded-md bg-red-50 text-red-600 px-4 py-2.5 text-sm border border-red-100">
                         {error}
                     </div>
                 )}
 
-                <form
-                    onSubmit={handleSubmit}
-                    className="space-y-5"
-                >
+                <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                        <label className="block mb-2 font-medium">
+                        <label className="block mb-1.5 text-sm font-medium text-gray-700">
                             Email
                         </label>
-
                         <input
                             type="email"
                             name="email"
                             value={form.email}
                             onChange={handleChange}
                             placeholder="admin@webchat.com"
-                            className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            autoComplete="email"
+                            className="w-full border border-gray-200 rounded-md px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900/10 focus:border-gray-400 transition"
                             required
                         />
                     </div>
 
                     <div>
-                        <label className="block mb-2 font-medium">
+                        <label className="block mb-1.5 text-sm font-medium text-gray-700">
                             Password
                         </label>
-
                         <input
                             type="password"
                             name="password"
                             value={form.password}
                             onChange={handleChange}
-                            placeholder="Password"
-                            className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            placeholder="••••••••"
+                            autoComplete="current-password"
+                            className="w-full border border-gray-200 rounded-md px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900/10 focus:border-gray-400 transition"
                             required
                         />
                     </div>
@@ -129,11 +124,9 @@ export default function AdminLogin() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white rounded-lg py-3 font-semibold transition"
+                        className="w-full bg-gray-900 hover:bg-gray-800 disabled:bg-gray-300 text-white rounded-md py-2.5 text-sm font-medium transition mt-6"
                     >
-                        {loading
-                            ? "Signing In..."
-                            : "Login as Admin"}
+                        {loading ? "Signing in…" : "Sign in"}
                     </button>
                 </form>
             </div>

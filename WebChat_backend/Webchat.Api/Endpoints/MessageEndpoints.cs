@@ -25,6 +25,20 @@ public static class MessageEndpoints
                     userId);
 
                 return Results.Ok(messages);
-            });
-    }
+        });
+
+        app.MapGet("/api/messages/unread-counts",
+        async (
+            ClaimsPrincipal user,
+            IMessageService messageService) =>
+            {
+            var userId = Guid.Parse(
+                user.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+            var counts = await messageService.GetUnreadCountsAsync(userId);
+
+            return Results.Ok(counts);
+            })
+        .RequireAuthorization();
+        }
 }

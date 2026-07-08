@@ -3,8 +3,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type CreateUserRequest = {
+export type UpdateUserRequest = {
     name?: string | null;
     email?: string | null;
-    password?: string | null;
+    role?: string | null;
 };

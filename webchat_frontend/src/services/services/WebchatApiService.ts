@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { ChangePasswordRequest } from '../models/ChangePasswordRequest';
 import type { CreateUserRequest } from '../models/CreateUserRequest';
 import type { LoginRequest } from '../models/LoginRequest';
 
@@ -62,6 +63,22 @@ requestBody: LoginRequest,
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/auth/refresh',
+        });
+    }
+
+    /**
+     * @param requestBody 
+     * @returns any OK
+     * @throws ApiError
+     */
+    public static postApiAuthChangePassword(
+requestBody: ChangePasswordRequest,
+): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/auth/change-password',
+            body: requestBody,
+            mediaType: 'application/json',
         });
     }
 

@@ -17,6 +17,15 @@ export interface ChatMessage {
     status: number;
 }
 
+function initials(name: string) {
+    return name
+        .trim()
+        .split(/\s+/)
+        .slice(0, 2)
+        .map(part => part[0]?.toUpperCase())
+        .join("");
+}
+
 export default function ChatWindow({
     contact,
     currentUserId,
@@ -132,7 +141,7 @@ export default function ChatWindow({
             if (message.senderId !== currentUserId) {
                 await connection.invoke("MessageDelivered", message.id);
             }
-            
+
             const belongs =
                 conversationId !== null &&
                 message.conversationId === conversationId;
@@ -218,61 +227,86 @@ export default function ChatWindow({
 
     if (!contact) {
         return (
-            <main className="flex-1 flex items-center justify-center bg-slate-50">
-                <h2 className="text-gray-500 text-xl">
-                    Select a contact to start chatting
-                </h2>
+            <main className="flex-1 flex items-center justify-center bg-zinc-50">
+                <div className="text-center">
+                    <div className="w-12 h-12 rounded-full bg-zinc-200 mx-auto mb-3" />
+                    <h2 className="text-zinc-400 text-sm">
+                        Select a contact to start chatting
+                    </h2>
+                </div>
             </main>
         );
     }
 
     return (
-        <main className="flex-1 flex flex-col">
-            <header className="h-16 border-b bg-white flex items-center px-6">
-                <div>
-                    <h2 className="font-bold text-lg">{contact.name}</h2>
+        <main className="flex-1 flex flex-col bg-zinc-50">
+            <header className="h-16 border-b border-zinc-200 bg-white flex items-center gap-3 px-6 shrink-0">
+                <div className="relative shrink-0">
+                    <div className="w-9 h-9 rounded-full bg-zinc-900 text-white text-xs font-medium flex items-center justify-center">
+                        {initials(contact.name)}
+                    </div>
+                    <span
+                        className={`absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full border-2 border-white ${
+                            contact.online ? "bg-emerald-500" : "bg-zinc-300"
+                        }`}
+                    />
+                </div>
 
-                    <p className="text-sm text-gray-500">
+                <div>
+                    <h2 className="font-semibold text-sm text-zinc-900">{contact.name}</h2>
+                    <p className="text-xs text-zinc-400">
                         {contact.online ? "Online" : "Offline"}
                     </p>
                 </div>
             </header>
 
-            <section className="flex-1 bg-slate-50 p-6 overflow-y-auto">
+            <section className="flex-1 p-6 overflow-y-auto space-y-3">
+                {messages.length === 0 && (
+                    <div className="h-full flex items-center justify-center">
+                        <p className="text-sm text-zinc-400">
+                            No messages yet. Say hello to {contact.name}.
+                        </p>
+                    </div>
+                )}
+
                 {messages.map(message => {
                     const mine = message.senderId === currentUserId;
 
                     return (
                         <div
                             key={message.id}
-                            className={`mb-3 ${mine ? "text-right" : ""}`}
+                            className={`flex ${mine ? "justify-end" : "justify-start"}`}
                         >
-                            <div
-                                className={`inline-block rounded-lg px-4 py-3 max-w-[70%] break-words ${mine
-                                    ? "bg-indigo-600 text-white"
-                                    : "bg-white shadow"
+                            <div className={`max-w-[70%] ${mine ? "items-end" : "items-start"} flex flex-col`}>
+                                <div
+                                    className={`rounded-2xl px-4 py-2.5 text-sm break-words ${
+                                        mine
+                                            ? "bg-zinc-900 text-white rounded-br-md"
+                                            : "bg-white text-zinc-900 border border-zinc-200 rounded-bl-md"
                                     }`}
-                            >
-                                {message.content}
-                            </div>
+                                >
+                                    {message.content}
+                                </div>
 
-                            <div className="text-xs text-gray-500 mt-1">
-                                {new Date(message.sentAt).toLocaleTimeString(
-                                    [],
-                                    {
-                                        hour: "2-digit",
-                                        minute: "2-digit",
-                                    }
-                                )}
-
-                                {mine && (
-                                    <span className="ml-2">
-                                        {message.status === 0 && "Sent"}
-                                        {message.status === 1 && "Delivered"}
-                                        {message.status === 2 && "Seen"}
+                                <div className="text-[11px] text-zinc-400 mt-1 px-1 flex items-center gap-1">
+                                    <span>
+                                        {new Date(message.sentAt).toLocaleTimeString(
+                                            [],
+                                            {
+                                                hour: "2-digit",
+                                                minute: "2-digit",
+                                            }
+                                        )}
                                     </span>
-                                )}
 
+                                    {mine && (
+                                        <span>
+                                            · {message.status === 0 && "Sent"}
+                                            {message.status === 1 && "Delivered"}
+                                            {message.status === 2 && "Seen"}
+                                        </span>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     );
@@ -282,13 +316,13 @@ export default function ChatWindow({
             </section>
 
             {contact.role === "Admin" ? (
-                <footer className="border-t bg-slate-100 p-4">
-                    <div className="text-center text-gray-500">
+                <footer className="border-t border-zinc-200 bg-white p-4 shrink-0">
+                    <div className="text-center text-sm text-zinc-400">
                         Messaging administrators is disabled.
                     </div>
                 </footer>
             ) : (
-                <footer className="border-t bg-white p-4">
+                <footer className="border-t border-zinc-200 bg-white p-4 shrink-0">
                     <form
                         onSubmit={handleSend}
                         className="flex gap-3"
@@ -297,13 +331,14 @@ export default function ChatWindow({
                             type="text"
                             value={text}
                             onChange={e => setText(e.target.value)}
-                            placeholder="Type a message..."
-                            className="flex-1 border rounded-lg px-4 py-3"
+                            placeholder="Type a message…"
+                            className="flex-1 border border-zinc-200 rounded-lg px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900/10 focus:border-zinc-400 transition-colors"
                         />
 
                         <button
                             type="submit"
-                            className="bg-indigo-600 text-white px-6 rounded-lg"
+                            disabled={!text.trim()}
+                            className="bg-zinc-900 hover:bg-zinc-800 disabled:bg-zinc-300 disabled:cursor-not-allowed text-white text-sm font-medium px-5 rounded-lg transition-colors"
                         >
                             Send
                         </button>

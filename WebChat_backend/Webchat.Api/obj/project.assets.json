@@ -3090,13 +3090,13 @@
     },
     "Webchat.Domain/1.0.0": {
       "type": "project",
-      "path": "../WebChat.Domain/Webchat.Domain.csproj",
-      "msbuildProject": "../WebChat.Domain/Webchat.Domain.csproj"
+      "path": "../Webchat.Domain/Webchat.Domain.csproj",
+      "msbuildProject": "../Webchat.Domain/Webchat.Domain.csproj"
     },
     "Webchat.Infrastructure/1.0.0": {
       "type": "project",
-      "path": "../WebChat.Infrastructure/Webchat.Infrastructure.csproj",
-      "msbuildProject": "../WebChat.Infrastructure/Webchat.Infrastructure.csproj"
+      "path": "../Webchat.Infrastructure/Webchat.Infrastructure.csproj",
+      "msbuildProject": "../Webchat.Infrastructure/Webchat.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {

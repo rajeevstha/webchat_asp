@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Webchat.Application.Dtos.Messages;
 using Webchat.Application.Interfaces;
 using Webchat.Application.Repository;
 using Webchat.Domain.Entities;
 using Webchat.Domain.Enums;
+using Webchat.Infrastructure.Data;
 
 namespace Webchat.Infrastructure.Services;
 
@@ -12,15 +14,18 @@ public class MessageService : IMessageService
     private readonly IMessageRepository _messageRepository;
     private readonly IConversationRepository _conversationRepository;
     private readonly UserManager<User> _userManager;
+    private readonly WebChatDbContext _context;
 
     public MessageService(
         IMessageRepository messageRepository,
         IConversationRepository conversationRepository,
-        UserManager<User> userManager)
+        UserManager<User> userManager,
+        WebChatDbContext context)
     {
         _messageRepository = messageRepository;
         _conversationRepository = conversationRepository;
         _userManager = userManager;
+        _context = context;
     }
 
     public async Task<MessageDto> SendMessageAsync(
@@ -148,4 +153,21 @@ public class MessageService : IMessageService
             await _messageRepository.UpdateAsync(message);
         }
     }
+
+    public async Task<Dictionary<Guid, int>> GetUnreadCountsAsync(Guid currentUserId)
+    {
+        return await _context.Messages
+       .Where(m =>
+           m.Status == MessageStatus.Delivered &&
+           m.SenderId != currentUserId &&
+           m.Conversation.Participants.Any(p => p.UserId == currentUserId))
+       .GroupBy(m => m.SenderId)
+       .Select(g => new
+       {
+           UserId = g.Key,
+           Count = g.Count()
+       })
+       .ToDictionaryAsync(x => x.UserId, x => x.Count);
+    }
+
 }
